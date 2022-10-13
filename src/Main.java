@@ -46,9 +46,9 @@ public class Main {
         // (то есть быть не целым, а дробным числом).
         System.out.println("Задание 3");
 
-        int sum = 0;
-        double middleSum = 0;
-        for (int coast : coasts) {
+        float sum = 0;
+        float middleSum = 0;
+        for (float coast : coasts) {
             sum = sum + coast;
             middleSum = sum / 30;
         }
