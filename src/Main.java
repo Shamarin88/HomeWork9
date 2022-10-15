@@ -1,4 +1,3 @@
-import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
@@ -10,10 +9,13 @@ public class Main {
 
         int[] coasts = new int[30];
         for (int i = 0; i < coasts.length; i++) {
-            Random random = new Random(i);
-            coasts[i] = random.nextInt(100_000) + 100_000;
-            System.out.println("Сумма трат за месяц составила " + coasts[i] + " рублей");
+            coasts[i] = (int) (Math.random() * 100_000) + 100_000;
         }
+        int sum = 0;
+        for (int j : coasts) {
+            sum = sum + j;
+        }
+        System.out.println(sum);
 
         // Задание 2
         // Следующая задача — найти минимальную и максимальную трату за день.
@@ -46,13 +48,11 @@ public class Main {
         // (то есть быть не целым, а дробным числом).
         System.out.println("Задание 3");
 
-        float sum = 0;
-        float middleSum = 0;
+        float sum1 = 0;
         for (float coast : coasts) {
-            sum = sum + coast;
-            middleSum = sum / 30;
+            sum1 += coast / 30;
         }
-        System.out.println("Средняя сумма трат за месяц составила " + middleSum + " рублей");
+        System.out.println("Средняя сумма трат за месяц составила " + sum1 + " рублей");
 
         // Отойдем от подсчетов.
         // В нашей бухгалтерской книге появился баг. Что-то пошло нет так, и ФИО
@@ -68,9 +68,11 @@ public class Main {
         // в правильном порядке.
         System.out.println("Задание 4");
 
-        char[] reverseFullName = {'n','a','v','I', ' ','v','o','n','a','v','I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
         }
     }
 }
+
+
